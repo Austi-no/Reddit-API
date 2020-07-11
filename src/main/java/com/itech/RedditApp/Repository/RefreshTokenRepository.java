@@ -5,12 +5,12 @@
  */
 package com.itech.RedditApp.Repository;
 
-import com.itech.RedditApp.model.Subreddit;
+import com.itech.RedditApp.model.RefreshToken;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-@Repository 
-public interface SubredditRepository extends JpaRepository<Subreddit, Long> {
-    
-    Optional<Subreddit> findByName(String subredditName);
+
+public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Long> {
+    Optional<RefreshToken> findByToken(String token);
+
+    void deleteByToken(String token);
 }
